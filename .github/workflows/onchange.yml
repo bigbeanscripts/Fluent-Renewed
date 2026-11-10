@@ -54,3 +54,13 @@ jobs:
         with:
           name: Fluent.rbxm
           path: Distribution/Fluent.rbxm
+
+      - name: Publish to GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest
+          name: Latest Build
+          allowUpdates: true
+          replacesArtifacts: true
+          artifacts: "Distribution/Fluent.luau"
+          token: ${{ secrets.GITHUB_TOKEN }}
